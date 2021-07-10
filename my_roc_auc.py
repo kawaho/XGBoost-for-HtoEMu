@@ -1,4 +1,5 @@
-#modified from https://github.com/SiLiKhon/my_roc_auc/blob/master/my_roc_auc.py
+#modified from https://github.com/SiLiKhon/my_roc_auc/blob/master/my_roc_auc.py with 3to2 package
+
 from __future__ import division
 from __future__ import absolute_import
 import numpy as np
