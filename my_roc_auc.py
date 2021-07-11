@@ -1,19 +1,32 @@
-#modified from https://github.com/SiLiKhon/my_roc_auc/blob/master/my_roc_auc.py with 3to2 package
+#modified from https://github.com/SiLiKhon/my_roc_auc/blob/master/my_roc_auc.py and with the help of 3to2 package
 
 from __future__ import division
 from __future__ import absolute_import
 import numpy as np
+import pandas as pd
 from itertools import izip
-
+import sys
 def my_roc_auc(classes,
                predictions,
                weights = None):
+   # f = open("roc_test.txt", "w")
+   # print >>f, "Hello class", classes
+   # print >>f, "Hello class", weights
+   # print >>f, "Hello class", weights[classes.index.values]
+   # f.close()
+   # return 1
+    if weights is None:
+        sample_weights = np.ones_like(predictions)
+    else:
+        sample_weights = weights[classes.index.values].values
+    return Utest(pd.to_numeric(classes.values), predictions, sample_weights)
+
+def Utest(classes,
+          predictions,
+          weights = None):
     u"""
     Calculating ROC AUC score as the probability of correct ordering
     """
-
-    if weights is None:
-        weights = np.ones_like(predictions)
 
     assert len(classes) == len(predictions) == len(weights)
     assert classes.ndim == predictions.ndim == weights.ndim == 1
