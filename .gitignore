@@ -1,5 +1,6 @@
 json
 models
+*.bin
 *__init__*
 .__*
 *.pyc
