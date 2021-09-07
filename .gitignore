@@ -1,0 +1,14 @@
+json
+*__init__*
+.__*
+*.pyc
+*.root
+*.xml
+*.log
+*.json
+*.ipynb_checkpoints/
+*.tar.gz
+*env*
+*.csv
+*.coffea
+*.out
