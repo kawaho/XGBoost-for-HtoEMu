@@ -1,5 +1,6 @@
 json
 models
+plots/
 *.bin
 *__init__*
 .__*
